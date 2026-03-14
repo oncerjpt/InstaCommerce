@@ -41,7 +41,7 @@ jobs:
       cloud_publish_configured: ${{ steps.check-cloud-creds.outputs.configured }}
       contracts_changed: ${{ steps.filter.outputs.contracts }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - id: filter
@@ -199,7 +199,7 @@ jobs:
       contents: read
       pull-requests: read
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -223,7 +223,7 @@ jobs:
       contents: read
       pull-requests: read
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Check dependency graph availability
@@ -297,7 +297,7 @@ jobs:
       matrix:
         service: ${{ fromJson(needs.detect-changes.outputs.services) }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Set up JDK
@@ -350,7 +350,7 @@ jobs:
       matrix:
         service: ${{ fromJson(needs.detect-changes.outputs.go_services) }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Set up Go
@@ -382,7 +382,7 @@ jobs:
       matrix:
         service: ${{ fromJson(needs.detect-changes.outputs.python_services) }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14'
@@ -417,7 +417,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -466,7 +466,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: Install yq
         uses: mikefarah/yq@v4
       - name: Update Helm values
