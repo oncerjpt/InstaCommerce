@@ -66,3 +66,10 @@ This folder contains the regenerated, discoverable iteration-3 review set for In
 | Issue register | [`appendices/issue-register.md`](appendices/issue-register.md) |
 | Approach comparison matrix | [`appendices/approach-comparison-matrix.md`](appendices/approach-comparison-matrix.md) |
 | Validation and rollout playbooks | [`appendices/validation-rollout-playbooks.md`](appendices/validation-rollout-playbooks.md) |
+
+## Current implementation status (Iter3)
+
+- **Completed artifacts**: Iter3 regeneration is done — `master-review.md`, `service-wise-guide.md`, `platform-wise-guide.md`, `implementation-program.md`, refreshed HLD/LLD/dataflow diagrams, and the supporting benchmark and appendix set now live together here as the baseline truth.
+- **Wave coverage**: The implementation program defines Waves 0–6 only; there are no artifacts for higher-numbered waves (nothing for “wave 27/28” to audit). Wave 0 is still the entry gate for truth restoration (CI, deploy lineage, ownership, contract enforcement) before later waves can proceed.
+- **Next-wave priorities**: From the Iter3 issue register and program, the most urgent items remain admin-gateway auth, removal of the shared internal service token, checkout authority consolidation, payment idempotency + webhook durability, catalog→search indexing, inventory reservation concurrency and store-ID validation, and establishing a single dispatch owner with recoverable Kafka handling.
+- **Gaps to close before calling Wave 0/1 exits**: CI does not yet enforce contracts/data/AI paths, CODEOWNERS ownership is not codified, and several doc-to-code claims (e.g., outbox-backed search indexing, contract validation) remain aspirational. Use the wave gates in `implementation-program.md` as the acceptance bar.
